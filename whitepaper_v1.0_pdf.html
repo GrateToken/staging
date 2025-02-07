@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>$GRATE Whitepaper | PDF Version</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* GLOBAL RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    /* Full-page background for PDF export */
+    html, body {
+      min-height: 100vh;
+      background: linear-gradient(120deg, #111 30%, #444 100%) no-repeat center center fixed;
+      background-size: cover;
+      background-color: #111;
+      color: #f1f1f1;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      overflow-x: hidden;
+      overscroll-behavior: contain;
+    }
+    
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    /* HEADER WITH LOGO */
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header img {
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #f1f1f1;
+      margin-bottom: 8px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    header p.version {
+      font-weight: 300;
+      font-size: 1rem;
+      color: #ddd;
+    }
+    
+    /* CONTENT SECTIONS */
+    section {
+      margin-bottom: 35px;
+      padding: 25px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    section h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 15px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    section p {
+      font-weight: 300;
+      color: #ddd;
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: gold;
+    }
+    .two-col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .col {
+      flex: 1;
+      min-width: 220px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+    .col h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: gold;
+      margin-bottom: 8px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    /* Definition list styling for management sections */
+    .management {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px 20px;
+      margin-top: 10px;
+    }
+    .management dt {
+      font-weight: 600;
+      color: gold;
+      padding-top: 4px;
+    }
+    .management dd {
+      margin: 0;
+      color: #ddd;
+    }
+    
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 20px;
+      background: transparent;
+    }
+    a {
+      color: gold;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Print adjustments for PDF export */
+    @media print {
+      @page {
+        margin: 0;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(120deg, #111 30%, #444 100%) no-repeat center center fixed !important;
+        background-size: cover !important;
+        background-color: #111 !important;
+      }
+      .wrapper {
+        margin: 0 !important;
+        padding: 20px !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+      }
+      .footer {
+        margin-top: 0 !important;
+        padding: 20px !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- HEADER WITH LOGO -->
+    <header>
+      <img src="../images/grate_logo.jpg" alt="$GRATE Logo">
+      <h1>$GRATE Whitepaper</h1>
+      <p class="version">Version 1.0 - February 2025</p>
+    </header>
+    
+    <!-- CONTENT SECTIONS -->
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>
+        $GRATE is more than just a meme token; it's a movement. Built on the Solana blockchain and launched via Pump.fun, $GRATE is designed to foster a community-driven ecosystem focused on engagement and growth. We make no promises regarding additional utilities, NFTs, or extra features beyond the token itself.
+      </p>
+    </section>
+    
+    <section id="token-overview">
+      <h2>Token Overview</h2>
+      <div class="two-col">
+        <div class="col">
+          <h3>Name</h3>
+          <p>$GRATE</p>
+        </div>
+        <div class="col">
+          <h3>Blockchain</h3>
+          <p>Solana</p>
+        </div>
+        <div class="col">
+          <h3>Launch Platform</h3>
+          <p>Pump.fun</p>
+        </div>
+        <div class="col">
+          <h3>Total Supply</h3>
+          <p>1 Billion</p>
+        </div>
+        <div class="col">
+          <h3>Current Supply</h3>
+          <p>1 Billion (Pre-Bonding to Raydium)</p>
+        </div>
+        <div class="col">
+          <h3>Developer Holdings</h3>
+          <p>215M $GRATE (21.5% pre-bonding)</p>
+        </div>
+        <div class="col">
+          <h3>Liquidity</h3>
+          <p>To be bonded on Raydium</p>
+        </div>
+        <div class="col">
+          <h3>Contract Address</h3>
+          <p style="font-size: 0.9rem; word-break: break-all;">
+            FKVYQSkLdg5hYxxPwxFW7JrTVu6eq2sJLstd9HHppump
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="vision">
+      <h2>Vision & Purpose</h2>
+      <p>
+        Our vision is to build a fair, community-driven token ecosystem that evolves over time. While we focus on balanced token distribution and market stability, we are fully committed to rewarding our community. A portion of funds will be allocated to secure strategic partnerships, marketing, and community growth initiatives. Our milestones are aspirational—starting with modest targets and scaling upward as momentum builds.
+      </p>
+    </section>
+    
+    <section id="release-schedule">
+      <h2>Release & Distribution Schedule</h2>
+      <p><strong>Phase 1: Pre-Bonding (Current)</strong></p>
+      <ul>
+        <li>Deployment on Solana via Pump.fun</li>
+        <li>Community building on X & Telegram</li>
+        <li>Early buy-ins and organic growth</li>
+        <li>Expansion of the liquidity pool toward bonding</li>
+      </ul>
+      <p><strong>Phase 2: Bonding to Raydium (Upcoming)</strong></p>
+      <ul>
+        <li>Liquidity will be locked permanently to support price stability</li>
+        <li>Unbonded tokens will be burned to help reduce inflation</li>
+        <li>Community engagement initiatives will follow bonding</li>
+        <li>Giveaways will be implemented post-bonding based on favorable market performance</li>
+      </ul>
+    </section>
+    
+    <section id="giveaways">
+      <h2>Giveaway Structure & Milestones</h2>
+      <p>
+        We are dedicated to rewarding our community. As the market grows, we will implement ongoing giveaways and rewards that reflect our collective support—without locking in fixed numbers. Early rewards will be introduced as soon as positive market momentum is observed, with further initiatives evolving as the project grows.
+      </p>
+    </section>
+    
+    <section id="token-management">
+      <h2>Post-Bonding Token Management</h2>
+      <dl class="management">
+        <dt>Developer Holdings:</dt>
+        <dd>215M $GRATE (Pre-Bonding)</dd>
+        <dt>Marketing & Partnerships:</dt>
+        <dd>A portion of funds will be allocated to secure strategic partnerships, marketing, and community growth.</dd>
+        <dt>Community Engagement:</dt>
+        <dd>Additional resources will be set aside to reward and support our community after bonding.</dd>
+        <dt>Market Stability & Liquidity:</dt>
+        <dd>Resources will be maintained to support healthy trading and further growth.</dd>
+      </dl>
+    </section>
+    
+    <section id="security">
+      <h2>Security & Sustainability</h2>
+      <dl class="management">
+        <dt>Liquidity Locking:</dt>
+        <dd>Bonding on Raydium ensures a secure liquidity pool.</dd>
+        <dt>Transparent Allocation:</dt>
+        <dd>Our team is committed to clear and open stewardship of token allocation.</dd>
+        <dt>Community Governance:</dt>
+        <dd>Holders will have a say in how funds are spent to grow $GRATE, ensuring decisions benefit the entire community.</dd>
+      </dl>
+    </section>
+    
+    <section id="get-involved">
+      <h2>How to Get Involved</h2>
+      <ul>
+        <li><strong>Engage:</strong> Join the $GRATE community on social platforms and share your ideas.</li>
+        <li><strong>Buy & Hold:</strong> Support the ecosystem by being an early participant.</li>
+        <li><strong>Spread Awareness:</strong> Help us reach a wider audience through social media engagement.</li>
+      </ul>
+    </section>
+    
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        $GRATE is a community-first, incentive-driven token. We are dedicated to building a sustainable, fair token ecosystem driven by community engagement and market stability. While no additional utilities, NFTs, or extra benefits are guaranteed beyond the token itself, we will continuously reward our supporters and reinvest in partnerships, marketing, and community growth. Our milestones—starting modestly and scaling upward—are aspirational and flexible, reflecting our commitment to progress.
+      </p>
+      <p>
+        The future of $GRATE is in the hands of its holders—together, we will make it thrive.
+      </p>
+      <p>
+        🚀 Follow us on <a href="https://x.com/GrateToken" target="_blank">X</a> | 🌐 Visit our <a href="https://gratetoken.com" target="_blank">Website</a>
+      </p>
+      <p style="font-size: 0.8rem; color: #aaa; margin-top: 20px;">
+        Disclaimer: This whitepaper is for informational purposes only and is not legally binding. The project team reserves the right to update this document as the project evolves.
+      </p>
+    </section>
+  </div>
+</body>
+</html>

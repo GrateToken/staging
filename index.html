@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>$GRATE Token</title>
+  <title>$GRATE Whitepaper | Version 1.0 - February 2025</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
   
   <style>
     /* GLOBAL RESET */
@@ -21,77 +18,64 @@
       box-sizing: border-box;
     }
     
-    /* Full-page background to cover all visible areas */
+    /* Full-page background */
     html, body {
       min-height: 100vh;
       margin: 0;
       padding: 0;
       background: linear-gradient(120deg, #111 30%, #444 100%) no-repeat center center fixed;
       background-size: cover;
-      background-color: #111; /* Fallback */
+      background-color: #111;
       font-family: 'Poppins', sans-serif;
       color: #f1f1f1;
+      line-height: 1.6;
+      padding: 20px;
       overflow-x: hidden;
-      /* Allow natural bounce on touch devices (if desired) */
+      /* Allow natural scroll bounce */
       overscroll-behavior: contain;
     }
     
     /* WRAPPER CONTAINER */
     .wrapper {
       max-width: 900px;
-      margin: 20px auto; /* add a small margin so the content isn’t flush with the edge */
+      margin: 20px auto;
       padding: 40px 20px;
       background: rgba(0, 0, 0, 0.5);
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      /* Ensure the wrapper’s background blends with the page background */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
     
-    /* HEADER */
+    /* HEADER WITH LOGO */
     header {
       text-align: center;
       margin-bottom: 40px;
+    }
+    header img {
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 300px;  /* Enlarged logo */
+      width: 100%;
+      height: auto;
     }
     header h1 {
       font-size: 2.4rem;
       font-weight: 700;
       color: #f1f1f1;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
-    header p {
+    header p.version {
       font-weight: 300;
-      color: #ddd;
       font-size: 1rem;
-      margin-bottom: 8px;
-    }
-    header a {
-      color: gold;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    header a:hover {
-      text-decoration: underline;
+      color: #ddd;
     }
     
-    /* GIF CONTAINER */
-    .gif-container {
-      text-align: center;
-      margin: 35px 0;
-    }
-    .gif-container img {
-      width: 320px;
-      max-width: 90%;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    
-    /* SECTIONS */
+    /* Content Sections */
     section {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
+      margin-bottom: 35px;
       padding: 25px;
-      margin-bottom: 25px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
     section h2 {
@@ -109,7 +93,6 @@
       color: #ddd;
       margin-bottom: 10px;
     }
-    
     ul {
       list-style: none;
       padding-left: 0;
@@ -119,204 +102,278 @@
       align-items: center;
       gap: 8px;
       margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
     }
-    
-    /* TOKEN INFO WRAPPER */
-    .token-info {
+    ul li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: gold;
+    }
+    .two-col {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
     }
-    
-    /* INFO CARD */
-    .info-card {
+    .col {
       flex: 1;
-      min-width: 200px;
-      background: rgba(255, 255, 255, 0.1);
+      min-width: 220px;
+      background: rgba(255,255,255,0.1);
       border-radius: 8px;
-      text-align: center;
-      padding: 20px;
+      padding: 15px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.3);
-      margin-bottom: 10px;
     }
-    .info-card h3 {
-      margin-bottom: 8px;
+    .col h3 {
       font-size: 1rem;
       font-weight: 600;
       color: gold;
+      margin-bottom: 8px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     }
-    .info-card p {
-      font-weight: 300;
-      color: #eee;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
+    
+    /* Definition list styling for management sections */
+    .management {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px 20px;
+      margin-top: 10px;
+    }
+    .management dt {
+      font-weight: 600;
+      color: gold;
+      padding-top: 4px;
+    }
+    .management dd {
+      margin: 0;
+      color: #ddd;
     }
     
-    /* BUTTON STYLING */
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 8px;
+    }
+    
+    a {
+      color: gold;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    
     .button-row {
       text-align: center;
-      margin-top: 20px;
+      margin-bottom: 20px;
     }
     .btn {
       background: gold;
       color: #111;
-      text-decoration: none;
-      padding: 12px 20px;
+      padding: 10px 18px;
       border-radius: 6px;
       font-weight: 600;
       display: inline-block;
       transition: 0.3s;
+      text-decoration: none;
     }
     .btn:hover {
       background: #fff;
     }
     
-    /* LINKS LIST (CENTERED, HORIZONTAL) */
-    .links-list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 3rem;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-    .links-list li {
-      margin: 0;
-    }
-    .links-list a {
-      color: gold;
-      font-weight: 500;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .links-list a:hover {
-      color: #fff;
-    }
-    .link-logo {
-      width: 36px;
-      height: 36px;
-    }
-    
-    /* FOOTER */
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #ccc;
-      margin: 20px 0 10px;
+    /* PRINT RULES */
+    @media print {
+      @page {
+        margin: 0;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(120deg, #111 30%, #444 100%) no-repeat center center fixed !important;
+        background-size: cover !important;
+        background-color: #111 !important;
+      }
+      .wrapper {
+        margin: 0 !important;
+        padding: 20px !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+      }
+      .footer {
+        margin-top: 0 !important;
+        padding: 20px !important;
+        background: #111 !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
     }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <!-- HEADER -->
-    <header>
-      <h1>$GRATE Token</h1>
-      <p>The Community-Driven Meme Token</p>
-      <p>
-        Follow us for the latest news:
-        <a href="https://x.com/GrateToken" target="_blank">
-          <img src="images/x_logo.png" alt="X Logo" style="width: 16px; vertical-align: middle; margin-right: 5px;" />
-          @GrateToken
-        </a>
-      </p>
-    </header>
-    
-    <!-- GIF CONTAINER -->
-    <div class="gif-container">
-      <img src="images/grate_token_transparent.gif" alt="$GRATE Animated Logo" />
+    <!-- Navigation Buttons -->
+    <div class="button-row" style="text-align: left;">
+      <a href="/" class="btn">Back to Main Page</a>
     </div>
     
-    <!-- ABOUT SECTION -->
-    <section>
-      <h2>About $GRATE</h2>
+    <!-- HEADER WITH LOGO -->
+    <header>
+      <img src="../images/grate_logo.jpg" alt="$GRATE Logo">
+      <h1>$GRATE Whitepaper</h1>
+      <p class="version">Version 1.0 - February 2025</p>
+    </header>
+    
+    <!-- CONTENT SECTIONS -->
+    <section id="introduction">
+      <h2>Introduction</h2>
       <p>
-        $GRATE is a fun, meme-driven project focused on uniting the crypto community with an accessible token. Inspired by Internet culture, we aim to bring people together while paving the way for new developments in decentralized finance.
-      </p>
-      <p>
-        Whether you're new to crypto or a seasoned veteran, $GRATE welcomes you to join our journey toward a future shaped by collective creativity and innovation.
+        $GRATE is more than just a meme token; it's a movement. Built on the Solana blockchain and launched via Pump.fun, $GRATE is designed to foster a community-driven ecosystem focused on engagement and growth. We make no promises regarding additional utilities, NFTs, or extra features beyond the token itself.
       </p>
     </section>
     
-    <!-- TOKEN INFO -->
-    <section>
-      <h2>Token Info</h2>
-      <div class="token-info">
-        <div class="info-card">
-          <h3>Symbol</h3>
+    <section id="token-overview">
+      <h2>Token Overview</h2>
+      <div class="two-col">
+        <div class="col">
+          <h3>Name</h3>
           <p>$GRATE</p>
         </div>
-        <div class="info-card">
-          <h3>Contract</h3>
+        <div class="col">
+          <h3>Blockchain</h3>
+          <p>Solana</p>
+        </div>
+        <div class="col">
+          <h3>Launch Platform</h3>
+          <p>Pump.fun</p>
+        </div>
+        <div class="col">
+          <h3>Total Supply</h3>
+          <p>1 Billion</p>
+        </div>
+        <div class="col">
+          <h3>Current Supply</h3>
+          <p>1 Billion (Pre-Bonding to Raydium)</p>
+        </div>
+        <div class="col">
+          <h3>Developer Holdings</h3>
+          <p>215M $GRATE (21.5% pre-bonding)</p>
+        </div>
+        <div class="col">
+          <h3>Liquidity</h3>
+          <p>To be bonded on Raydium</p>
+        </div>
+        <div class="col">
+          <h3>Contract Address</h3>
           <p style="font-size: 0.9rem; word-break: break-all;">
             FKVYQSkLdg5hYxxPwxFW7JrTVu6eq2sJLstd9HHppump
           </p>
         </div>
-        <div class="info-card">
-          <h3>Total Supply</h3>
-          <p>1 Billion</p>
-        </div>
       </div>
     </section>
     
-    <!-- ROADMAP -->
-    <section>
-      <h2>Roadmap</h2>
-      <ul>
-        <li>🚀 <strong>Launched Successfully</strong></li>
-        <li>🌐 Community Building & Social Engagement</li>
-        <li>📈 Listings & Strategic Partnerships</li>
-        <li>🔒 Long-Term Utility & Ecosystem Growth</li>
-      </ul>
-    </section>
-    
-    <!-- TRACK & TRADE -->
-    <section>
-      <h2>Track & Trade</h2>
-      <p>Monitor $GRATE on these platforms for real-time data and trading:</p>
-      <ul class="links-list">
-        <li>
-          <a href="https://pump.fun/coin/FKVYQSkLdg5hYxxPwxFW7JrTVu6eq2sJLstd9HHppump?coin_sort=market_cap" target="_blank">
-            <img src="images/pumpfun.png" alt="Pump.Fun Logo" class="link-logo" />
-            Pump.Fun
-          </a>
-        </li>
-        <li>
-          <a href="https://dexscreener.com/solana/j76zmuuffdewfmo8tnvywpbth32dqxngwrugbldntsrd" target="_blank">
-            <img src="images/dexscreener.png" alt="DexScreener Logo" class="link-logo" />
-            Dexscreener
-          </a>
-        </li>
-        <li>
-          <a href="https://t.me/GrateCoin" target="_blank">
-            <img src="images/tg.png" alt="Telegram Logo" class="link-logo" />
-            Join Telegram
-          </a>
-        </li>
-      </ul>
-    </section>
-    
-    <!-- WHITEPAPER -->
-    <section>
-      <h2>Whitepaper</h2>
+    <section id="vision">
+      <h2>Vision & Purpose</h2>
       <p>
-        Ready to delve deeper into our vision? Read our official whitepaper to learn more about how $GRATE plans to revolutionize meme-token culture.
+        Our vision is to build a fair, community-driven token ecosystem that evolves over time. While we focus on balanced token distribution and market stability, we are fully committed to rewarding our community. A portion of funds will be allocated to secure strategic partnerships, marketing, and community growth initiatives. Our milestones are aspirational—starting with modest targets and scaling upward as momentum builds.
       </p>
-      <div class="button-row" style="text-align: center;">
-        <a href="/whitepaper/" class="btn">Read Whitepaper</a>
+    </section>
+    
+    <section id="release-schedule">
+      <h2>Release & Distribution Schedule</h2>
+      <p><strong>Phase 1: Pre-Bonding (Current)</strong></p>
+      <ul>
+        <li>Deployment on Solana via Pump.fun</li>
+        <li>Community building on X & Telegram</li>
+        <li>Early buy-ins and organic growth</li>
+        <li>Expansion of the liquidity pool toward bonding</li>
+      </ul>
+      <p><strong>Phase 2: Bonding to Raydium (Upcoming)</strong></p>
+      <ul>
+        <li>Liquidity will be locked permanently to support price stability</li>
+        <li>Unbonded tokens will be burned to help reduce inflation</li>
+        <li>Community engagement initiatives will follow bonding</li>
+        <li>Giveaways will be implemented post-bonding based on favorable market performance</li>
+      </ul>
+    </section>
+    
+    <section id="giveaways">
+      <h2>Giveaway Structure & Milestones</h2>
+      <p>
+        We are dedicated to rewarding our community. As the market grows, we will implement ongoing giveaways and rewards that reflect our collective support—without locking in fixed numbers. Early rewards will be introduced as soon as positive market momentum is observed, with further initiatives evolving as the project grows.
+      </p>
+    </section>
+    
+    <section id="token-management">
+      <h2>Post-Bonding Token Management</h2>
+      <dl class="management">
+        <dt>Developer Holdings:</dt>
+        <dd>215M $GRATE (Pre-Bonding)</dd>
+        <dt>Marketing & Partnerships:</dt>
+        <dd>A portion of funds will be allocated to secure strategic partnerships, marketing, and community growth.</dd>
+        <dt>Community Engagement:</dt>
+        <dd>Additional resources will be set aside to reward and support our community after bonding.</dd>
+        <dt>Market Stability & Liquidity:</dt>
+        <dd>Resources will be maintained to support healthy trading and further growth.</dd>
+      </dl>
+    </section>
+    
+    <section id="security">
+      <h2>Security & Sustainability</h2>
+      <dl class="management">
+        <dt>Liquidity Locking:</dt>
+        <dd>Bonding on Raydium ensures a secure liquidity pool.</dd>
+        <dt>Transparent Allocation:</dt>
+        <dd>Our team is committed to clear and open stewardship of token allocation.</dd>
+        <dt>Community Governance:</dt>
+        <dd>Holders will have a say in how funds are spent to grow $GRATE, ensuring decisions benefit the entire community.</dd>
+      </dl>
+    </section>
+    
+    <section id="get-involved">
+      <h2>How to Get Involved</h2>
+      <ul>
+        <li><strong>Engage:</strong> Join the $GRATE community on social platforms and share your ideas.</li>
+        <li><strong>Buy & Hold:</strong> Support the ecosystem by being an early participant.</li>
+        <li><strong>Spread Awareness:</strong> Help us reach a wider audience through social media engagement.</li>
+      </ul>
+    </section>
+    
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        $GRATE is a community-first, incentive-driven token. We are dedicated to building a sustainable, fair token ecosystem driven by community engagement and market stability. While no additional utilities, NFTs, or extra benefits are guaranteed beyond the token itself, we will continuously reward our supporters and reinvest in partnerships, marketing, and community growth. Our milestones—starting modestly and scaling upward—are aspirational and flexible, reflecting our commitment to progress.
+      </p>
+      <p>
+        The future of $GRATE is in the hands of its holders—together, we will make it thrive.
+      </p>
+      <p>
+        🚀 Follow us on <a href="https://x.com/GrateToken" target="_blank">X</a> | 🌐 Visit our <a href="https://gratetoken.com" target="_blank">Website</a>
+      </p>
+      <p style="font-size: 0.8rem; color: #aaa; margin-top: 20px;">
+        Disclaimer: This whitepaper is for informational purposes only and is not legally binding. The project team reserves the right to update this document as the project evolves.
+      </p>
+    </section>
+    
+    <!-- PDF DOWNLOAD SECTION -->
+    <section id="download">
+      <div class="button-row" style="text-align: center; margin-top: 30px;">
+        <a href="whitepaper_v1.0.pdf" download class="btn">Download PDF</a>
       </div>
     </section>
     
+    <!-- FOOTER -->
+    <footer class="footer">
+      &copy; 2025 $GRATE Token. All rights reserved.
+    </footer>
   </div>
-  
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 $GRATE Token. All rights reserved.
-  </footer>
 </body>
 </html>
